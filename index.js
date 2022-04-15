@@ -1,15 +1,14 @@
+/* eslint-disable max-classes-per-file */
 class Personaje {
   nombre;
   familia;
   edad;
-  tipo;
   estado;
   serie;
-  constructor(nombre, familia, edad, tipo) {
+  constructor(nombre, familia, edad) {
     this.nombre = nombre;
     this.familia = familia;
     this.edad = edad;
-    this.tipo = tipo;
     this.estado = "Vivo";
     this.serie = "Juego de Tronos";
   }
@@ -30,6 +29,14 @@ class Personaje {
     this.estado = "muerto";
   }
 }
+class Rey extends Personaje {
+  constructor(nombre, familia, edad) {
+    super(nombre, familia, edad);
+    this.Anos_Reinad = "";
+  }
+}
+const personajes = new Personaje("Tyrion Lannister", "familia", "edad");
+const reyes = new Personaje.Rey("Tyrion Lannister", "familia", "edad");
 
-const personajes = new Personaje("Tyrion Lannister");
-console.log(personajes.nombre);
+console.table(personajes);
+console.table(reyes);
